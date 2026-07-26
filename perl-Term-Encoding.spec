@@ -1,15 +1,13 @@
 %define upstream_name    Term-Encoding
-%define upstream_version 0.02
-
 Name:		perl-%{upstream_name}
-Version:	%perl_convert_version %{upstream_version}
-Release:	5
+Version:	0.02
+Release:	6
 
 Summary:	Detect encoding of the current terminal
 License:	GPL+ or Artistic
 Group:		Development/Perl
-Url:		https://search.cpan.org/dist/%{upstream_name}
-Source0:	http://www.cpan.org/modules/by-module/Term/%{upstream_name}-%{upstream_version}.tar.gz
+Url:		https://metacpan.org/dist/%{upstream_name}
+Source0:	http://www.cpan.org/modules/by-module/Term/%{upstream_name}-%{version}.tar.gz
 
 BuildRequires:	make
 BuildRequires:	perl-devel
@@ -20,7 +18,7 @@ Term::Encoding is a simple module to detect an encoding the current
 terminal expects, in various ways.
 
 %prep
-%setup -q -n %{upstream_name}-%{upstream_version}
+%setup -q -n %{upstream_name}-%{version}
 
 %build
 perl Makefile.PL INSTALLDIRS=vendor
@@ -44,9 +42,7 @@ make test
 
 * Sat Aug 01 2009 Jérôme Quelin <jquelin@mandriva.org> 0.20.0-1mdv2010.0
 + Revision: 406185
-- rebuild using %%perl_convert_version
-
-* Thu Mar 05 2009 Michael Scherer <misc@mandriva.org> 0.02-1mdv2009.1
+- rebuild using %0.02 Thu Mar 05 2009 Michael Scherer <misc@mandriva.org> 0.02-1mdv2009.1
 + Revision: 348721
 - import perl-Term-Encoding
 
